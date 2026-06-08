@@ -1,0 +1,59 @@
+# Commodity Quant 专家团 — 模型配置模板 v3.8
+# 使用: python setup_wizard.py 或手动编辑后另存为 config.yaml
+
+pigeon:
+  longcat_api_key: ""
+  longcat_api_url: "https://api.longcat.chat/v1/chat/completions"
+  longcat_model: "LongCat-2.0-Preview"
+  neodata_queries:
+    - "WTI crude oil price, Brent spread, US crude inventories, US production, refinery utilization"
+    - "natural gas Henry Hub, US storage, production"
+    - "gold spot, silver spot, copper spot, platinum"
+    - "US 2Y/10Y treasury yield, DXY, US CPI"
+    - "SP500, VIX"
+    - "CFTC managed money WTI net long, producer net short"
+  longcat_queries:
+    - "Iran Strait of Hormuz tension 2026, US Iran sanctions, OPEC+ production"
+    - "central bank gold purchases 2026, PBOC gold reserves"
+    - "global crude oil supply demand balance 2026, OPEC spare capacity"
+
+analysts:
+  wti:
+    name: "油井"
+    model: ""
+    api_url: ""
+    api_key: ""
+    timeout_seconds: 120
+    max_tokens: 4000
+    agent_md: "agents/wti-analyst.md"
+  gold:
+    name: "金匠"
+    model: ""
+    api_url: ""
+    api_key: ""
+    timeout_seconds: 120
+    max_tokens: 4000
+    agent_md: "agents/gold-analyst.md"
+  macro:
+    name: "观澜"
+    model: ""
+    api_url: ""
+    api_key: ""
+    timeout_seconds: 120
+    max_tokens: 4000
+    agent_md: "agents/macro-strategist.md"
+  hawkeye:
+    name: "鹰眼"
+    model: "deepseek-v4-pro"
+    api_url: ""
+    api_key: ""
+    timeout_seconds: 180
+    max_tokens: 4000
+    agent_md: "agents/hawkeye.md"
+
+output:
+  artifacts_dir: "pipeline/artifacts"
+
+pipeline:
+  max_rounds: 3
+  full_auto: true

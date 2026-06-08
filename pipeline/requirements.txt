@@ -1,0 +1,4 @@
+# Commodity Quant 专家团 — Python 依赖
+# 安装: pip install -r requirements.txt
+PyYAML>=6.0
+requests>=2.28
